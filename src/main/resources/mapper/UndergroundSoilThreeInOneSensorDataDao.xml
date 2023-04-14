@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiong.sensors_api.dao.UndergroundSoilThreeInOneSensorDataDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xiong.sensors_api.entity.UndergroundSoilThreeInOneSensorDataEntity" id="undergroundSoilThreeInOneSensorDataMap">
+        <result property="id" column="id"/>
+        <result property="acquisitionTime" column="Acquisition_time"/>
+        <result property="temperature" column="temperature"/>
+        <result property="waterContentPercentage" column="water_content_percentage"/>
+        <result property="salinity" column="salinity"/>
+        <result property="conductivity" column="conductivity"/>
+        <result property="tds" column="tds"/>
+    </resultMap>
+    <select id="getLastedEntity" resultType="com.xiong.sensors_api.entity.UndergroundSoilThreeInOneSensorDataEntity">
+        SELECT * FROM `underground_soil_three_in_one_sensor_data`
+        WHERE id = (SELECT MAX(id) FROM `underground_soil_three_in_one_sensor_data`)
+    </select>
+
+</mapper>

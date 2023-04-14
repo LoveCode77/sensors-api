@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiong.sensors_api.dao.BaseDataDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xiong.sensors_api.entity.BaseDataEntity" id="baseDataMap">
+        <result property="id" column="id"/>
+        <result property="acquisitionTime" column="Acquisition_time"/>
+        <result property="windDirection" column="wind_direction"/>
+        <result property="windSpeed" column="wind_speed"/>
+        <result property="airTemperature" column="air_temperature"/>
+        <result property="airHumidity" column="air_humidity"/>
+        <result property="lightIntensity" column="light_intensity"/>
+        <result property="isRainOrSnow" column="is_rain_or_snow"/>
+        <result property="ultravioletRaysIntensity" column="ultraviolet_rays_intensity"/>
+        <result property="carbonDioxideContent" column="carbon_dioxide_content"/>
+    </resultMap>
+
+    <select id="getLastedEntity" resultType="com.xiong.sensors_api.entity.BaseDataEntity">
+        SELECT * FROM `base_data`
+        WHERE id = (SELECT MAX(id) FROM `base_data`)
+    </select>
+
+
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiong.sensors_api.dao.Data32New02Dao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xiong.sensors_api.entity.Data32New02Entity" id="data32New02Map">
+        <result property="id" column="id"/>
+        <result property="acquisitionTime" column="Acquisition_time"/>
+        <result property="parameter11" column="parameter11"/>
+        <result property="parameter12" column="parameter12"/>
+        <result property="parameter21" column="parameter21"/>
+        <result property="parameter22" column="parameter22"/>
+        <result property="parameter31" column="parameter31"/>
+        <result property="parameter32" column="parameter32"/>
+        <result property="parameter41" column="parameter41"/>
+        <result property="parameter42" column="parameter42"/>
+        <result property="parameter51" column="parameter51"/>
+        <result property="parameter52" column="parameter52"/>
+        <result property="parameter61" column="parameter61"/>
+        <result property="parameter62" column="parameter62"/>
+        <result property="parameter71" column="parameter71"/>
+        <result property="parameter72" column="parameter72"/>
+        <result property="parameter81" column="parameter81"/>
+        <result property="parameter82" column="parameter82"/>
+        <result property="parameter91" column="parameter91"/>
+        <result property="parameter92" column="parameter92"/>
+        <result property="parameter101" column="parameter101"/>
+        <result property="parameter102" column="parameter102"/>
+        <result property="parameter111" column="parameter111"/>
+        <result property="parameter112" column="parameter112"/>
+        <result property="parameter121" column="parameter121"/>
+        <result property="parameter122" column="parameter122"/>
+        <result property="parameter131" column="parameter131"/>
+        <result property="parameter132" column="parameter132"/>
+        <result property="parameter141" column="parameter141"/>
+        <result property="parameter142" column="parameter142"/>
+        <result property="parameter151" column="parameter151"/>
+        <result property="parameter152" column="parameter152"/>
+        <result property="parameter161" column="parameter161"/>
+        <result property="parameter162" column="parameter162"/>
+        <result property="parameter171" column="parameter171"/>
+        <result property="parameter172" column="parameter172"/>
+        <result property="parameter181" column="parameter181"/>
+        <result property="parameter182" column="parameter182"/>
+        <result property="parameter191" column="parameter191"/>
+        <result property="parameter192" column="parameter192"/>
+        <result property="parameter201" column="parameter201"/>
+        <result property="parameter202" column="parameter202"/>
+        <result property="parameter211" column="parameter211"/>
+        <result property="parameter212" column="parameter212"/>
+        <result property="parameter221" column="parameter221"/>
+        <result property="parameter222" column="parameter222"/>
+        <result property="parameter231" column="parameter231"/>
+        <result property="parameter232" column="parameter232"/>
+        <result property="parameter241" column="parameter241"/>
+        <result property="parameter242" column="parameter242"/>
+        <result property="parameter251" column="parameter251"/>
+        <result property="parameter252" column="parameter252"/>
+        <result property="parameter261" column="parameter261"/>
+        <result property="parameter262" column="parameter262"/>
+        <result property="parameter271" column="parameter271"/>
+        <result property="parameter272" column="parameter272"/>
+        <result property="parameter281" column="parameter281"/>
+        <result property="parameter282" column="parameter282"/>
+        <result property="parameter291" column="parameter291"/>
+        <result property="parameter292" column="parameter292"/>
+        <result property="parameter301" column="parameter301"/>
+        <result property="parameter302" column="parameter302"/>
+        <result property="parameter311" column="parameter311"/>
+        <result property="parameter312" column="parameter312"/>
+        <result property="parameter321" column="parameter321"/>
+        <result property="parameter322" column="parameter322"/>
+    </resultMap>
+
+
+</mapper>

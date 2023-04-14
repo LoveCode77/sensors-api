@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiong.sensors_api.dao.FiveLayerSensorDataDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xiong.sensors_api.entity.FiveLayerSensorDataEntity" id="fiveLayerSensorDataMap">
+        <result property="id" column="id"/>
+        <result property="acquisitionTime" column="Acquisition_time"/>
+        <result property="oneLayerTemperature" column="one_layer_temperature"/>
+        <result property="oneLayerWaterContentPercentage" column="one_layer_water_content_percentage"/>
+        <result property="oneLayerNitrogenContent" column="one_layer_nitrogen_content"/>
+        <result property="oneLayerPh" column="one_layer_ph"/>
+        <result property="oneLayerPotassiumContent" column="one_layer_potassium_content"/>
+        <result property="oneLayerPhosphorusContent" column="one_layer_phosphorus_content"/>
+        <result property="twoLayerTemperature" column="two_layer_temperature"/>
+        <result property="twoLayerWaterContentPercentage" column="two_layer_water_content_percentage"/>
+        <result property="twoLayerNitrogenContent" column="two_layer_nitrogen_content"/>
+        <result property="twoLayerPh" column="two_layer_ph"/>
+        <result property="twoLayerPotassiumContent" column="two_layer_potassium_content"/>
+        <result property="twoLayerPhosphorusContent" column="two_layer_phosphorus_content"/>
+        <result property="threeLayerTemperature" column="three_layer_temperature"/>
+        <result property="threeLayerWaterContentPercentage" column="three_layer_water_content_percentage"/>
+        <result property="threeLayerNitrogenContent" column="three_layer_nitrogen_content"/>
+        <result property="threeLayerPh" column="three_layer_ph"/>
+        <result property="threeLayerPotassiumContent" column="three_layer_potassium_content"/>
+        <result property="threeLayerPhosphorusContent" column="three_layer_phosphorus_content"/>
+        <result property="fourLayerTemperature" column="four_layer_temperature"/>
+        <result property="fourLayerWaterContentPercentage" column="four_layer_water_content_percentage"/>
+        <result property="fourLayerNitrogenContent" column="four_layer_nitrogen_content"/>
+        <result property="fourLayerPh" column="four_layer_ph"/>
+        <result property="fourLayerPotassiumContent" column="four_layer_potassium_content"/>
+        <result property="fourLayerPhosphorusContent" column="four_layer_phosphorus_content"/>
+        <result property="fiveLayerTemperature" column="five_layer_temperature"/>
+        <result property="fiveLayerWaterContentPercentage" column="five_layer_water_content_percentage"/>
+        <result property="fiveLayerNitrogenContent" column="five_layer_nitrogen_content"/>
+        <result property="fiveLayerPh" column="five_layer_ph"/>
+        <result property="fiveLayerPotassiumContent" column="five_layer_potassium_content"/>
+        <result property="fiveLayerPhosphorusContent" column="five_layer_phosphorus_content"/>
+    </resultMap>
+    <select id="getLastedEntity" resultType="com.xiong.sensors_api.entity.FiveLayerSensorDataEntity">
+        SELECT * FROM `five_layer_sensor_data`
+        WHERE id = (SELECT MAX(id) FROM `five_layer_sensor_data`)
+    </select>
+
+</mapper>
