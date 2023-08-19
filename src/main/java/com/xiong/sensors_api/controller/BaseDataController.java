@@ -6,11 +6,7 @@ import java.util.Map;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.xiong.sensors_api.entity.BaseDataEntity;
 import com.xiong.sensors_api.service.BaseDataService;
@@ -28,6 +24,7 @@ import com.xiong.sensors_api.common.utils.R;
  */
 @RestController
 @RequestMapping("sensors_api/basedata")
+@CrossOrigin
 public class BaseDataController {
     @Autowired
     private BaseDataService baseDataService;
@@ -35,6 +32,7 @@ public class BaseDataController {
     /**
      * 列表
      */
+    //localhost:8090/sensors_api/basedata/getLatest
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = baseDataService.queryPage(params);
