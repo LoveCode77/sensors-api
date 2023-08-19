@@ -18,7 +18,7 @@ import com.xiong.sensors_api.common.utils.R;
 /**
  * 
  *
- * @author ½ð×ÖËþÉÏµÄ´óÐÜÃ¨
+ * @author
  * @email 1822649761@qq.com
  * @date 2023-04-11 11:12:14
  */

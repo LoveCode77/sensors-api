@@ -21,6 +21,13 @@ public class Schedule {
     private FiveLayerSensorDataService fiveLayerSensorDataService;
     @Autowired
     private UndergroundSoilThreeInOneSensorDataService undergroundSoilThreeInOneSensorDataService;
+    /** 
+    * @Description: 伪装数据采集，向数据库保存数据
+    * @Param: [] 
+    * @return: void 
+    * @Author: 金子塔上大熊猫
+    * @Date: 2023/8/19 19:29
+    */
     @Scheduled(fixedRate =30*60*1000)
     public void BaseDataScheduled(){
         BaseDataEntity randomBaseDataEntity = RandomDataUtils.getRandomBaseDataEntity();
