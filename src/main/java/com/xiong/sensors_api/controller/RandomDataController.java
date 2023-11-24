@@ -5,11 +5,14 @@ import com.xiong.sensors_api.common.utils.RandomDataUtils;
 import com.xiong.sensors_api.entity.BaseDataEntity;
 import com.xiong.sensors_api.entity.FiveLayerSensorDataEntity;
 import com.xiong.sensors_api.entity.UndergroundSoilThreeInOneSensorDataEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("sensors_api/random")
+@CrossOrigin
 public class RandomDataController {
 
     @RequestMapping("/base")
@@ -17,6 +20,7 @@ public class RandomDataController {
         BaseDataEntity lastedEntity = RandomDataUtils.getRandomBaseDataEntity();
         return R.ok().put("page", lastedEntity);
     }
+
     @RequestMapping("/five")
     public R five(){
         FiveLayerSensorDataEntity randomFiveLayerSensorDataEntity = RandomDataUtils.getRandomFiveLayerSensorDataEntity();
