@@ -7,11 +7,11 @@ import com.xiong.sensors_api.entity.UndergroundSoilThreeInOneSensorDataEntity;
 import com.xiong.sensors_api.service.BaseDataService;
 import com.xiong.sensors_api.service.FiveLayerSensorDataService;
 import com.xiong.sensors_api.service.UndergroundSoilThreeInOneSensorDataService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
 @Component
 @EnableScheduling
 public class Schedule {
@@ -28,7 +28,7 @@ public class Schedule {
     * @Author: 金子塔上大熊猫
     * @Date: 2023/8/19 19:29
     */
-    @Scheduled(fixedRate =30*60*1000)
+//    @Scheduled(fixedRate =30*60*1000)
     public void BaseDataScheduled(){
         BaseDataEntity randomBaseDataEntity = RandomDataUtils.getRandomBaseDataEntity();
         baseDataService.save(randomBaseDataEntity);

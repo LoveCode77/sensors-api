@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +25,7 @@ import com.xiong.sensors_api.common.utils.R;
  * @email 1822649761@qq.com
  * @date 2023-04-11 11:12:14
  */
+@Api(tags = "基础数据管理")
 @RestController
 @RequestMapping("sensors_api/basedata")
 @CrossOrigin
@@ -33,7 +37,8 @@ public class BaseDataController {
      * 列表
      */
     //localhost:8090/sensors_api/basedata/getLatest
-    @RequestMapping("/list")
+    @RequestMapping(value = "/list",method = {RequestMethod.GET})
+    @ApiParam(required = false)
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = baseDataService.queryPage(params);
 
@@ -42,7 +47,8 @@ public class BaseDataController {
     /**
      * 列表
      */
-    @RequestMapping("/getLatest")
+    @RequestMapping(value = "/getLatest",method = {RequestMethod.GET})
+    @ApiOperation(value="获取最新数据")
     public R list1(){
         BaseDataEntity lastedEntity = baseDataService.getLastedEntity();
         return R.ok().put("page", lastedEntity);
@@ -51,7 +57,7 @@ public class BaseDataController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
+    @RequestMapping(value = "/info/{id}",method = {RequestMethod.POST})
     public R info(@PathVariable("id") Integer id){
 		BaseDataEntity baseData = baseDataService.getById(id);
 
@@ -61,7 +67,7 @@ public class BaseDataController {
     /**
      * 保存
      */
-    @RequestMapping("/save")
+    @RequestMapping(value = "/save",method = {RequestMethod.POST})
     public R save(@RequestBody BaseDataEntity baseData){
 		baseDataService.save(baseData);
 
@@ -71,7 +77,7 @@ public class BaseDataController {
     /**
      * 修改
      */
-    @RequestMapping("/update")
+    @RequestMapping(value = "/update",method = {RequestMethod.POST})
     public R update(@RequestBody BaseDataEntity baseData){
 		baseDataService.updateById(baseData);
 
@@ -81,7 +87,7 @@ public class BaseDataController {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
+    @RequestMapping(value = "/delete",method = {RequestMethod.POST})
     public R delete(@RequestBody Integer[] ids){
 		baseDataService.removeByIds(Arrays.asList(ids));
 

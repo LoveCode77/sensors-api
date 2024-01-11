@@ -5,8 +5,10 @@ import com.xiong.sensors_api.common.utils.R;
 import com.xiong.sensors_api.common.utils.RandomDataUtils;
 import com.xiong.sensors_api.entity.BaseDataEntity;
 import com.xiong.sensors_api.service.BaseDataService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -19,6 +21,8 @@ import java.util.Map;
 * @Author: 金子塔上大熊猫
 * @Date: 2023/11/24 22:19
 */
+@ApiIgnore
+@Api(tags = "测试jsonp，跨域内容")
 @RestController
 @RequestMapping("/")
 @CrossOrigin

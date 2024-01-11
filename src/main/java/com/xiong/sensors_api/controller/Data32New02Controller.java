@@ -3,18 +3,15 @@ package com.xiong.sensors_api.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.xiong.sensors_api.entity.Data32New02Entity;
 import com.xiong.sensors_api.service.Data32New02Service;
 import com.xiong.sensors_api.common.utils.PageUtils;
 import com.xiong.sensors_api.common.utils.R;
-
+import springfox.documentation.annotations.ApiIgnore;
 
 
 /**
@@ -24,6 +21,8 @@ import com.xiong.sensors_api.common.utils.R;
  * @email 1822649761@qq.com
  * @date 2023-04-11 11:12:14
  */
+@ApiIgnore
+@Api(tags = "原始数据02")
 @RestController
 @RequestMapping("sensors_api/data32new02")
 public class Data32New02Controller {
@@ -33,7 +32,7 @@ public class Data32New02Controller {
     /**
      * 列表
      */
-    @RequestMapping("/list")
+    @PostMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = data32New02Service.queryPage(params);
 
@@ -44,7 +43,7 @@ public class Data32New02Controller {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
+    @PostMapping("/info/{id}")
     public R info(@PathVariable("id") Integer id){
 		Data32New02Entity data32New02 = data32New02Service.getById(id);
 
@@ -54,7 +53,7 @@ public class Data32New02Controller {
     /**
      * 保存
      */
-    @RequestMapping("/save")
+    @PostMapping("/save")
     public R save(@RequestBody Data32New02Entity data32New02){
 		data32New02Service.save(data32New02);
 
@@ -64,7 +63,7 @@ public class Data32New02Controller {
     /**
      * 修改
      */
-    @RequestMapping("/update")
+    @PostMapping("/update")
     public R update(@RequestBody Data32New02Entity data32New02){
 		data32New02Service.updateById(data32New02);
 
@@ -74,7 +73,7 @@ public class Data32New02Controller {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
+    @PostMapping("/delete")
     public R delete(@RequestBody Integer[] ids){
 		data32New02Service.removeByIds(Arrays.asList(ids));
 
