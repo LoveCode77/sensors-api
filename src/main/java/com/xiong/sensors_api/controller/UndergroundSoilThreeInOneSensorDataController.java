@@ -3,8 +3,11 @@ package com.xiong.sensors_api.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.xiong.sensors_api.common.utils.DateUtils;
+import com.xiong.sensors_api.common.utils.IpUtil;
 import com.xiong.sensors_api.entity.FiveLayerSensorDataEntity;
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +16,7 @@ import com.xiong.sensors_api.service.UndergroundSoilThreeInOneSensorDataService;
 import com.xiong.sensors_api.common.utils.PageUtils;
 import com.xiong.sensors_api.common.utils.R;
 
+import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -22,6 +26,7 @@ import com.xiong.sensors_api.common.utils.R;
  * @email 1822649761@qq.com
  * @date 2023-04-11 11:12:14
  */
+@Slf4j
 @Api(tags = "三合一土壤传感器数据管理")
 @RestController
 @RequestMapping("sensors_api/undergroundsoilthreeinonesensordata")
@@ -30,7 +35,9 @@ public class UndergroundSoilThreeInOneSensorDataController {
     private UndergroundSoilThreeInOneSensorDataService undergroundSoilThreeInOneSensorDataService;
 
     @GetMapping("/getLatest")
-    public R getLatest(){
+    public R getLatest(HttpServletRequest request){
+        String ipAddress = IpUtil.getIpAddr(request);
+        log.info(DateUtils.getNowTime()+" "+ipAddress+"请求了undergroundsoilthreeinonesensordata的最新一条数据");
         UndergroundSoilThreeInOneSensorDataEntity lastedEntity = undergroundSoilThreeInOneSensorDataService.getLastedEntity();
         return R.ok().put("data", lastedEntity);
     }
