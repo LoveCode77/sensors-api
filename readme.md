@@ -24,6 +24,6 @@
     }
 ```
 # TODO
-可以使用swagger方便api的阅读，不过该项目过于简单，用不用swagger都可以。
+可以使用swagger方便api的阅读，不过该项目过于简单，用不用swagger都可以。已完成整合swagger!
 
 #
