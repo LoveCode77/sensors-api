@@ -1,6 +1,10 @@
-# 项目介绍 
-
+# 项目介绍
 假的数据采集项目和查询接口
+- 提供多种数据采集的获取接口
+- 每隔半小时给三个表插入一条数据伪装数据采集
+    - BaseDataEntity
+    - FiveLayerSensorDataEntity
+    - UndergroundSoilThreeInOneSensorDataEntity
 # Swagger
 http://localhost:8090/swagger-ui.html#/
 http://1.15.92.207:8090/swagger-ui.html#/
